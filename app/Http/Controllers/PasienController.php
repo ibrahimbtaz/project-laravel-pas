@@ -33,6 +33,7 @@ class PasienController extends Controller
                 'kode_pasien' => 'required|unique:pasiens',
                 'nama_pasien' => 'required|max:255',
                 'birthday' => 'required|date_format:Y-m-d',
+                'email' => 'required',
                 'alamat' => 'required',
             ]);
 
@@ -56,6 +57,7 @@ class PasienController extends Controller
                 'dokter_id' => 'required',
                 'nama_pasien' => 'required|max:255',
                 'birthday' => 'required|date_format:d-m-Y',
+                'email' => 'required',
                 'alamat' => 'required',
         ];
 

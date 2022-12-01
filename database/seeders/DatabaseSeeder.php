@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'kode_dokter' => 30,
             'nama_dokter' => 'Muhammad',
             'keahlian' => 'Mata',
-            'telepon' => '82135711877',
+            'telepon' => '082135711877',
             'alamat' => 'Kudus',
         ]);
 

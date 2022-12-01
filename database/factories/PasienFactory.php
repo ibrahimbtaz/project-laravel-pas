@@ -21,6 +21,7 @@ class PasienFactory extends Factory
             'kode_pasien' => fake()->numerify('######'),
             'nama_pasien' => fake()->name(),
             'birthday' => fake()->date(),
+            'email' => fake()->email(),
             'alamat' => fake()->address(),
         ];
     }

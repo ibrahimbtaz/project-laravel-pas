@@ -22,6 +22,7 @@
                                     <th scope="col" class="text-start">Nama Pasien</th>
                                     <th scope="col" class="text-start">Tanggal Lahir</th>
                                     <th scope="col" class="text-start">Diagnosa</th>
+                                    <th scope="col" class="text-start">Email</th>
                                     <th scope="col" class="text-start">Alamat</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
@@ -34,6 +35,7 @@
                                         <td class="text-start align-middle"><?= $pasien->nama_pasien ?></td>
                                         <td class="text-start align-middle"><?= $pasien->birthday ?></td>
                                         <td class="text-start align-middle"><?= $pasien->dokter->keahlian ?></td>
+                                        <td class="text-start align-middle"><?= $pasien->email ?></td>
                                         <td class="text-start align-middle"><?= $pasien->alamat ?></td>
                                         <td class="text-start">
                                             <a type="button" class="btn btn-outline-warning"

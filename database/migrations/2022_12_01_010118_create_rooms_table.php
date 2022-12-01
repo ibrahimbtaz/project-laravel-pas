@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pasiens', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('dokter_id');
-            $table->integer('kode_pasien')->unique();
-            $table->string('nama_pasien');
-            $table->date('birthday')->format('d-m-Y');
-            $table->string('email');
-            $table->string('alamat');
+            $table->string ("nama");
+            $table->string("kelas");
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pasiens');
+        Schema::dropIfExists('rooms');
     }
 };
