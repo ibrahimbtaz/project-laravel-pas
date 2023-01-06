@@ -39,6 +39,11 @@
                             </div>
                             <br>
                             <div class="form-group">
+                                <label for="" class="form-label">Email</label>
+                                <input class="form-control" id="email" name="email"value="{{ old('email') }}">
+                            </div>
+                            <br>
+                            <div class="form-group">
                                 <label for="" class="form-label">Alamat</label>
                                 <input class="form-control" id="alamat" name="alamat"value="{{ old('alamat') }}">
                             </div>

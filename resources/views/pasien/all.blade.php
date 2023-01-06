@@ -18,9 +18,9 @@
                             <thead>
                                 <tr align="center" class="table-active">
                                     <th scope="col">Id</th>
-                                    <th scope="col" class="text-start">Kode Pasien</th>
+                                    <th scope="col" class="text-start">Kode</th>
                                     <th scope="col" class="text-start">Nama Pasien</th>
-                                    <th scope="col" class="text-start">Tanggal Lahir</th>
+                                    <th scope="col" class="text-start">Birth</th>
                                     <th scope="col" class="text-start">Diagnosa</th>
                                     <th scope="col" class="text-start">Email</th>
                                     <th scope="col" class="text-start">Alamat</th>

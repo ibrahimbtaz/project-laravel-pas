@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use Illuminate\Contracts\Session\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +18,20 @@ use App\Http\Controllers\DokterController;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('data.home');
+    return view('home');
+});
+
+route::group(['prefix' => '/pasien'], function(){
+    Route::get('/all', [PasienController:: class, 'index']);
+    Route::get('/detail/{pasien}',[PasienController::class,'show']);
+    Route::get('/create', [PasienController:: class, 'create']);
+    Route::post('/add', [PasienController:: class, 'store']);
+    Route::get('/edit/{pasien}',[PasienController::class,'edit']);
+    Route::post('/update/{pasien}', [PasienController:: class, 'update']);
+    Route::delete('/delete/{pasien}',[PasienController::class,'destroy']);
 });
 
 route::group(['prefix' => '/dokter'], function(){
@@ -29,13 +44,16 @@ route::group(['prefix' => '/dokter'], function(){
     Route::delete('/delete/{dokter}',[DokterController::class,'destroy']);
 });
 
-route::group(['prefix' => '/pasien'], function(){
-    Route::get('/all', [PasienController:: class, 'index']);
-    Route::get('/detail/{pasien}',[PasienController::class,'show']);
-    Route::get('/create', [PasienController:: class, 'create']);
-    Route::post('/add', [PasienController:: class, 'store']);
-    Route::get('/edit/{pasien}',[PasienController::class,'edit']);
-    Route::post('/update/{pasien}', [PasienController:: class, 'update']);
-    Route::delete('/delete/{pasien}',[PasienController::class,'destroy']);
+
+route::group(['prefix' => '/login'], function(){
+    Route::get('/all', [LoginController:: class, 'index']);
+    Route::post('/login', [LoginController:: class, 'login']);
 });
+
+route::group(['prefix' => '/register'], function(){
+    Route::get('/all', [RegisterController:: class, 'index']);
+    Route::post('/create', [RegisterController:: class, 'create']);
+    Route::get('/logout',[RegisterController::class,'logout']);
+});
+
 

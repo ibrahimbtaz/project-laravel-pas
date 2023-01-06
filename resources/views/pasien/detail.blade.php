@@ -30,6 +30,11 @@
                             </div>
                             <br>
                             <div class="form-group">
+                                <label for="" class="form-label">Email</label>
+                                <input class="form-control" value="{{ $pasien->email}}" readonly disabled>
+                            </div>
+                            <br>
+                            <div class="form-group">
                                 <label for="" class="form-label">Alamat</label>
                                 <input class="form-control" value="{{ $pasien->alamat }}" readonly disabled>
                             </div>

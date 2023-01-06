@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('dokter_id');
             $table->integer('kode_pasien')->unique();
-            $table->string('nama_pasien');
+            $table->string('nama_pasien' );
             $table->date('birthday')->format('d-m-Y');
             $table->string('email');
             $table->string('alamat');
