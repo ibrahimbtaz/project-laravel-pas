@@ -24,8 +24,8 @@
                             <br>
                             <div class="form-group">
                                 <label for="" class="form-label">Tanggal Lahir</label>
-                                <input class="form-control" id="birthday"
-                                name="birthday"value="{{ old('birthday', $pasien->birthday) }}" required>
+                                <input type="date" class="form-control" id="birthday"
+                                    name="birthday"value="{{ old('birthday', $pasien->birthday) }}" required>
                             </div>
                             <br>
                             <div class="form-group">
@@ -33,10 +33,12 @@
                                 <select class="form-select" name="dokter_id">
                                     @foreach ($dokter as $doctor)
                                         @if (old('dokter_id', $pasien->dokter_id == $doctor->id))
-                                            <option name="dokter_id" value="{{ $doctor->id }}" selected>{{ $doctor->keahlian }}
+                                            <option name="dokter_id" value="{{ $doctor->id }}" selected>
+                                                {{ $doctor->keahlian }}
                                             </option>
                                         @endif
-                                        <option name="dokter_id" value="{{ $doctor->id }}">{{ $doctor->keahlian }}</option>
+                                        <option name="dokter_id" value="{{ $doctor->id }}">{{ $doctor->keahlian }}
+                                        </option>
                                     @endforeach
                                 </select>
                                 {{-- <input class="form-control"id="kode_pasien" name="kode_pasien" value="{{ $pasien->dokter->eahlian }}"> --}}
@@ -45,13 +47,13 @@
                             <div class="form-group">
                                 <label for="" class="form-label">Email</label>
                                 <input class="form-control" id="email"
-                                name="email"value="{{ old('email', $pasien->email) }}" required>
+                                    name="email"value="{{ old('email', $pasien->email) }}" required>
                             </div>
                             <br>
                             <div class="form-group">
                                 <label for="" class="form-label">Alamat</label>
                                 <input class="form-control" id="alamat"
-                                name="alamat"value="{{ old('alamat', $pasien->alamat) }}" required>
+                                    name="alamat"value="{{ old('alamat', $pasien->alamat) }}" required>
                             </div>
                             <br>
                             <div class="float-end">

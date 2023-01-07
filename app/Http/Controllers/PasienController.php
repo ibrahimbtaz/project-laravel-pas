@@ -56,7 +56,7 @@ class PasienController extends Controller
         $rules =[
                 'dokter_id' => 'required',
                 'nama_pasien' => 'required|max:255',
-                'birthday' => 'required|date_format:d-m-Y',
+                'birthday' => 'required|date_format:Y-m-d',
                 'email' => 'required',
                 'alamat' => 'required',
         ];

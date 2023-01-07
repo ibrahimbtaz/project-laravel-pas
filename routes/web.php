@@ -5,6 +5,7 @@ use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Contracts\Session\Session;
 
 /*
@@ -53,7 +54,10 @@ route::group(['prefix' => '/login'], function(){
 route::group(['prefix' => '/register'], function(){
     Route::get('/all', [RegisterController:: class, 'index']);
     Route::post('/create', [RegisterController:: class, 'create']);
-    Route::get('/logout',[RegisterController::class,'logout']);
+});
+
+route::group(['prefix' => '/session'], function(){
+    Route::get('/logout', [SessionController:: class, 'logout']);
 });
 
 

@@ -19,7 +19,7 @@
                                 <tr align="center" class="table-active">
 
                                     <th scope="col">Id</th>
-                                    <th scope="col" class="text-start">Kode Dokter</th>
+                                    <th scope="col" class="text-start">Kode</th>
                                     <th scope="col" class="text-start">Nama Dokter</th>
                                     <th scope="col" class="text-start">Keahlian</th>
                                     <th scope="col" class="text-start">Telepon</th>
@@ -41,16 +41,16 @@
                                         <td class="text-start"><?= $dokter->telepon ?></td>
                                         <td class="text-start"><?= $dokter->alamat ?></td>
                                         <td>
-                                            <a type="button" class="btn btn-warning"
+                                            <a type="button" class="btn btn-outline-warning"
                                                 href="detail/{{ $dokter->id }}">Detail
                                                 Page</a>
-                                            <a type="button" class="btn btn-primary" href="edit/{{ $dokter->id }}">Edit
+                                            <a type="button" class="btn btn-outline-primary" href="edit/{{ $dokter->id }}">Edit
                                                 Page</a>
                                             <form action="/dokter/delete/{{ $dokter->id }}" method="post"
                                                 class="d-inline">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-danger"
+                                                <button class="btn btn-outline-danger"
                                                     onclick="return  confirm('Apakah Anda Yakin') ">Hapus</button>
                                             </form>
                                         </td>

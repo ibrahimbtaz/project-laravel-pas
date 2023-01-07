@@ -15,7 +15,7 @@
             </div>
         </div>
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/register/logout" class="nav-link active text-light">Logout</a></li>
+            <li class="nav-item"><a href="/session/logout" class="nav-link active text-light">Logout</a></li>
         </ul>
     </div>
 </nav>
