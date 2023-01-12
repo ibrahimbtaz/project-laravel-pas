@@ -15,12 +15,6 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    function logout()
-    {
-        Auth::logout();
-        return redirect('login/all')->with('success', 'Berhasil logout');
-    }
-
     function create(Request $request)
     {
         Session::flash('name', $request->name);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
@@ -22,7 +23,7 @@ use Illuminate\Contracts\Session\Session;
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('login.index');
 });
 
 route::group(['prefix' => '/pasien'], function(){
@@ -58,6 +59,10 @@ route::group(['prefix' => '/register'], function(){
 
 route::group(['prefix' => '/session'], function(){
     Route::get('/logout', [SessionController:: class, 'logout']);
+});
+
+route::group(['prefix' => '/admin'], function(){
+    Route::get('/all', [AdminController:: class, 'admin']);
 });
 
 

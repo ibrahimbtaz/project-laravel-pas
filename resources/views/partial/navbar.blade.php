@@ -9,6 +9,7 @@
             <div class="navbar-nav">
                 <a class="nav-link text-light" href="/pasien/all">Pasien</a>
                 <a class="nav-link text-light" href="/dokter/all">Dokter</a>
+                <a class="nav-link text-light" href="/admin/all">Admin</a>
                 {{-- <a class="nav-link text-light" href="/login/all">Login</a>
                 <a class="nav-link text-light" href="/register/all">Register</a> --}}
                 <a class="nav-link disabled text-light">About</a>
