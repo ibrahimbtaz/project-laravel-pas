@@ -13,7 +13,7 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    function login(Request $request)
+    function auth(Request $request)
     {
         Session::flash('email', $request->email);
         $request->validate([
@@ -30,9 +30,10 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            return redirect('pasien/all')->with('success', 'Berhasil login');
+            // return redirect('pasien/all')->with('success', 'Berhasil login');
+            return redirect('/about')->with('success', 'Berhasil login');
         } else {
-            return redirect('login/all')->withErrors('Username dan password yang dimasukkan tidak valid');
+            return redirect('auth/all')->withErrors('Username dan password yang dimasukkan tidak valid');
         }
     }
 }

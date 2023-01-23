@@ -10,6 +10,9 @@ class SessionController extends Controller
     function logout()
     {
         Auth::logout();
-        return redirect('login/all')->with('success', 'Berhasil logout');
+
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/auth/all')->with('success', 'Berhasil logout');
     }
 }

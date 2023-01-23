@@ -75,7 +75,7 @@
     <body class="text-center">
 
         <main class="form-signin w-100 m-auto">
-            <form action="/login/login" method="POST">
+            <form action="/auth/login" method="POST">
                 @csrf
                 <img class="mb-4" src="../brand/bootstrap-logo.svg" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal text-light">Please Login</h1>
@@ -98,7 +98,6 @@
                 <div class="mt-3 text-center text-light">
                     <p>Don't have an account? <a href="/register/all">Register</a></p>
                 </div>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
         </main>
 

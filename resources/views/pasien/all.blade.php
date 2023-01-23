@@ -1,15 +1,15 @@
 @extends('layout.main')
+{{-- @extends('admin.layout.main') --}}
 @section('container')
-    <br>
     <div class="container">
         <div class="row">
             @if (session()->has('Successfully'))
-                    <div class="alert alert-success col-lg-12" role="alert">
-                        {{ session('Successfully') }}
-                    </div>
-                @endif
+                <div class="alert alert-success col-lg-12" role="alert">
+                    {{ session('Successfully') }}
+                </div>
+            @endif
             <div class="col-ad-12">
-                <h1 align="center" class=" text-light">Data Pasien</h1>
+                <h1 class="text-light">Data Pasien</h1>
                 <div class="">
                     <div class="card-body">
                         <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a>
@@ -36,12 +36,13 @@
                                         <td class="text-start align-middle"><?= $pasien->birthday ?></td>
                                         <td class="text-start align-middle"><?= $pasien->dokter->keahlian ?></td>
                                         <td class="text-start align-middle"><?= $pasien->email ?></td>
-                                        <td class="text-start align-middle"><?= $pasien->alamat ?></td>
+                                        <td class="text-start align-middle"><?= Str::limit($pasien->alamat, 18) ?></td>
                                         <td class="text-start">
                                             <a type="button" class="btn btn-outline-warning"
                                                 href="detail/{{ $pasien->id }}">Detail
                                                 Data</a>
-                                            <a type="button" class="btn btn-outline-primary" href="edit/{{ $pasien->id }}">Edit
+                                            <a type="button" class="btn btn-outline-primary"
+                                                href="edit/{{ $pasien->id }}">Edit
                                                 Data</a>
                                             <form action="/pasien/delete/{{ $pasien->id }}" method="post"
                                                 class="d-inline">

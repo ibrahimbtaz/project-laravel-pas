@@ -1,10 +1,10 @@
-@extends('layout.main')
-
+{{-- @extends('layout.main') --}}
+@extends('admin.layout.main')
 @section('container')
     <div class="container">
         <div class="row">
             <div class="col-ad-12">
-                <h3 align="center" class=" text-light">Tambah Data Pasien</h3>
+                <h3 class=" text-light">Tambah Data Pasien</h3>
                 <br>
                 <div class="card bg-light">
                     <div class="card-body">

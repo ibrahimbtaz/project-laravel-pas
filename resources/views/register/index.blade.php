@@ -70,7 +70,7 @@
 
 
         <!-- Custom styles for this template -->
-        <link href="../signin.css" rel="stylesheet">
+        <link href="../css/signin.css" rel="stylesheet">
     </head>
 
     <body class="text-center">
@@ -101,9 +101,8 @@
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" name="submit" type="submit">Register</button>
                 <div class="mt-3 text-center text-light">
-                    <p>Already have an account? <a href="/login/all">Login</a></p>
+                    <p>Already have an account? <a href="/auth/all">Login</a></p>
                 </div>
-                <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
             </form>
         </main>
 

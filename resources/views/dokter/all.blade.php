@@ -1,10 +1,10 @@
 @extends('layout.main')
+{{-- @extends('admin.layout.main') --}}
 @section('container')
-    <br>
     <div class="container">
         <div class="row">
             <div class="col-ad-12">
-                <h1 align="center" class=" text-light">Data Dokter</h1>
+                <h1 class="text-light">Data Dokter</h1>
                 @if (session()->has('Successfully'))
                     <div class="alert alert-success col-lg-12" role="alert">
                         {{ session('Successfully') }}

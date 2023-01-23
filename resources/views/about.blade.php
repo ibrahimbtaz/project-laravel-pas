@@ -1,4 +1,5 @@
 @extends('layout.main')
+{{-- @extends('admin.layout.main') --}}
 
 @section('container')
     <br>

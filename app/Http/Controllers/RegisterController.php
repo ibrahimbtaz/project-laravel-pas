@@ -15,7 +15,7 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    function create(Request $request)
+    function store(Request $request)
     {
         Session::flash('name', $request->name);
         Session::flash('email', $request->email);

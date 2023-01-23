@@ -26,8 +26,12 @@ Route::get('/', function () {
     return view('login.index');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 route::group(['prefix' => '/pasien'], function(){
-    Route::get('/all', [PasienController:: class, 'index']);
+    Route::get('/all', [PasienController:: class, 'index'])->middleware('auth');
     Route::get('/detail/{pasien}',[PasienController::class,'show']);
     Route::get('/create', [PasienController:: class, 'create']);
     Route::post('/add', [PasienController:: class, 'store']);
@@ -47,22 +51,27 @@ route::group(['prefix' => '/dokter'], function(){
 });
 
 
-route::group(['prefix' => '/login'], function(){
-    Route::get('/all', [LoginController:: class, 'index']);
-    Route::post('/login', [LoginController:: class, 'login']);
+route::group(['prefix' => '/auth'], function(){
+    Route::get('/all', [LoginController:: class, 'index'])->name('login')->middleware('guest');
+    Route::post('/login', [LoginController:: class, 'auth']);
 });
 
 route::group(['prefix' => '/register'], function(){
-    Route::get('/all', [RegisterController:: class, 'index']);
-    Route::post('/create', [RegisterController:: class, 'create']);
+    Route::get('/all', [RegisterController:: class, 'index'])->middleware('guest');
+    Route::post('/create', [RegisterController:: class, 'store']);
 });
 
 route::group(['prefix' => '/session'], function(){
-    Route::get('/logout', [SessionController:: class, 'logout']);
+    Route::get('/logout', [SessionController::class, 'logout']);
 });
 
 route::group(['prefix' => '/admin'], function(){
-    Route::get('/all', [AdminController:: class, 'admin']);
+    Route::get('/all', [AdminController:: class, 'admin'])->middleware('auth');
+
+    // Route::group(['prefix' => '/pasien'], function(){
+    //     Route::get('/all', [PasienAdminController:: class, 'index'])->middleware('auth');
+    // });
+
 });
 
 
