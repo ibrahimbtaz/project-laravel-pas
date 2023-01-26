@@ -7,3 +7,5 @@ How to clone laravel project from github clone
 - npm install (opsional)
 - php artisan key:generate
 - php artisan serve
+
+copy in terminal
