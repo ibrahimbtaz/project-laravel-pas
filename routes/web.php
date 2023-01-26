@@ -68,8 +68,9 @@ route::group(['prefix' => '/session'], function(){
     Route::get('/logout', [SessionController::class, 'logout']);
 });
 
-route::group(['prefix' => '/admin'], function(){
+Route::group(['prefix' => '/admin'], function(){
     Route::get('/all', [AdminController:: class, 'admin'])->middleware('auth');
+
 
     Route::group(['prefix' => '/pasien'], function(){
         Route::get('/all', [DashboardPasien:: class, 'index'])->middleware('auth');
@@ -82,7 +83,7 @@ route::group(['prefix' => '/admin'], function(){
     });
 
     route::group(['prefix' => '/dokter'], function(){
-        Route::get('/all', [DashboardDokter:: class, 'index']);
+        Route::get('/all', [DashboardDokter:: class, 'index'])->middleware('auth');
         Route::get('/detail/{dokter}',[DashboardDokter::class,'show']);
         Route::get('/create', [DashboardDokter:: class, 'create']);
         Route::post('/add', [DashboardDokter:: class, 'store']);
@@ -90,7 +91,7 @@ route::group(['prefix' => '/admin'], function(){
         Route::post('/update/{dokter}', [DashboardDokter:: class, 'update']);
         Route::delete('/delete/{dokter}',[DashboardDokter::class,'destroy']);
     });
-
+    
 });
 
 
