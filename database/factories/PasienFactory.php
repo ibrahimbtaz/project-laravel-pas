@@ -17,7 +17,7 @@ class PasienFactory extends Factory
     public function definition()
     {
         return [
-            'dokter_id' => mt_rand(1,6),
+            'dokter_id' => mt_rand(1,7),
             'kode_pasien' => fake()->numerify('###'),
             'nama_pasien' => fake()->name(),
             'birthday' => fake()->date(),

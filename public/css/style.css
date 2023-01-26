@@ -4,3 +4,9 @@
     left: 0;
     right: 0;
 }
+
+tr {
+    line-height: 40px;
+    min-height: 40px;
+    height: 40px;
+}

@@ -24,46 +24,54 @@ class DatabaseSeeder extends Seeder
             'kode_dokter' => 30,
             'nama_dokter' => 'Muhammad',
             'keahlian' => 'Mata',
-            'telepon' => '082135711877',
-            'alamat' => 'Kudus',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
 
         Dokter::create([
             'kode_dokter' => 31,
             'nama_dokter' => 'Surya',
             'keahlian' => 'Jantung',
-            'telepon' => '082135711877',
-            'alamat' => 'Semarang',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
 
         Dokter::create([
             'kode_dokter' => 32,
             'nama_dokter' => 'Ibrahim',
             'keahlian' => 'Bedah',
-            'telepon' => '082135711877',
-            'alamat' => 'Demak',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
 
         Dokter::create([
             'kode_dokter' => 33,
-            'nama_dokter' => 'Kuchiki',
+            'nama_dokter' => fake()->name(),
             'keahlian' => 'Paru-Paru',
-            'telepon' => '082135711877',
-            'alamat' => 'Demak',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
         Dokter::create([
             'kode_dokter' => 34,
-            'nama_dokter' => 'Ika',
+            'nama_dokter' => fake()->name(),
             'keahlian' => 'Ginjal',
-            'telepon' => '082135711877',
-            'alamat' => 'Demak',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
         Dokter::create([
             'kode_dokter' => 35,
-            'nama_dokter' => 'Rena',
+            'nama_dokter' => fake()->name(),
             'keahlian' => 'Perut',
-            'telepon' => '082135711877',
-            'alamat' => 'Demak',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
         ]);
+        Dokter::create([
+            'kode_dokter' => 36,
+            'nama_dokter' => fake()->name(),
+            'keahlian' => 'Hati',
+            'telepon' => fake()->phoneNumber(),
+            'alamat' => fake()->address(),
+        ]);
+
     }
 }

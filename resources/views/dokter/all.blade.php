@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-ad-12">
-                <h1 class="text-light">Data Dokter</h1>
+                <h1 class="text-light" align="center" >Data Dokter</h1>
                 @if (session()->has('Successfully'))
                     <div class="alert alert-success col-lg-12" role="alert">
                         {{ session('Successfully') }}
@@ -12,7 +12,7 @@
                 @endif
                 <div class="">
                     <div class="card-body">
-                        <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a>
+                        {{-- <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a> --}}
                         <br><br>
                         <table class="table table-dark table-hover">
                             <thead>

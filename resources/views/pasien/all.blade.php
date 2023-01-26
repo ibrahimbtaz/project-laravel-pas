@@ -9,10 +9,10 @@
                 </div>
             @endif
             <div class="col-ad-12">
-                <h1 class="text-light">Data Pasien</h1>
+                <h1 class="text-light" align="center">Data Pasien</h1>
                 <div class="">
                     <div class="card-body">
-                        <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a>
+                        {{-- <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a> --}}
                         <br><br>
                         <table class="table table-dark table-hover">
                             <thead>

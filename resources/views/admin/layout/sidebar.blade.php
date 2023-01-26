@@ -4,7 +4,7 @@
         <h6
             class="sidebar-heading d-flex justify-content-between align-items-center px-3  mb-1 text-muted text-uppercase">
             <span>Add Table</span>
-            <a class="link-secondary" href="#" aria-label="Add a new report">
+            <a class="link-secondary" href="/admin/all" aria-label="Add a new report">
                 <span data-feather="plus-circle" class="align-text-bottom"></span>
             </a>
         </h6>
@@ -12,19 +12,19 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="/admin/pasien/all">
-                    <span data-feather="home" class="align-text-bottom"></span>
+                    <span data-feather="meh" class="align-text-bottom"></span>
                     Pasien
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/dokter/all">
-                    <span data-feather="file" class="align-text-bottom"></span>
+                    <span data-feather="smile" class="align-text-bottom"></span>
                     Dokter
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/about">
-                    <span data-feather="shopping-cart" class="align-text-bottom"></span>
+                    <span data-feather="info" class="align-text-bottom"></span>
                     About
                 </a>
             </li>
