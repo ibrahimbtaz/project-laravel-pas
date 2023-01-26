@@ -1,5 +1,5 @@
-@extends('layout.main')
-{{-- @extends('admin.layout.main') --}}
+{{-- @extends('layout.main') --}}
+@extends('admin.layout.main')
 @section('container')
     <div class="container">
         <div class="row">
@@ -24,7 +24,7 @@
                                     <th scope="col" class="text-start">Keahlian</th>
                                     <th scope="col" class="text-start">Telepon</th>
                                     <th scope="col" class="text-start">Alamat</th>
-                                    {{-- <th scope="col">Aksi</th> --}}
+                                    <th scope="col">Aksi</th>
                                     <!-- <th scope="col">Tanggal Lahir</th>
                                                                     <th scope="col">Foto</th>
                                                                     <th scope="col">Aksi</th> -->
@@ -40,7 +40,7 @@
                                         <td class="text-start"><?= $dokter->keahlian ?></td>
                                         <td class="text-start"><?= $dokter->telepon ?></td>
                                         <td class="text-start"><?= $dokter->alamat ?></td>
-                                        {{-- <td>
+                                        <td>
                                             <a type="button" class="btn btn-outline-warning"
                                                 href="detail/{{ $dokter->id }}">Detail
                                                 Page</a>
@@ -53,7 +53,7 @@
                                                 <button class="btn btn-outline-danger"
                                                     onclick="return  confirm('Apakah Anda Yakin') ">Hapus</button>
                                             </form>
-                                        </td> --}}
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

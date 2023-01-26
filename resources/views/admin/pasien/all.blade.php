@@ -1,5 +1,4 @@
-@extends('layout.main')
-{{-- @extends('admin.layout.main') --}}
+@extends('admin.layout.main')
 @section('container')
     <div class="container">
         <div class="row">
@@ -24,7 +23,7 @@
                                     <th scope="col" class="text-start">Diagnosa</th>
                                     <th scope="col" class="text-start">Email</th>
                                     <th scope="col" class="text-start">Alamat</th>
-                                    {{-- <th scope="col">Aksi</th> --}}
+                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,22 +35,22 @@
                                         <td class="text-start align-middle"><?= $pasien->birthday ?></td>
                                         <td class="text-start align-middle"><?= $pasien->dokter->keahlian ?></td>
                                         <td class="text-start align-middle"><?= $pasien->email ?></td>
-                                        <td class="text-start align-middle"><?= $pasien->alamat ?></td>
-                                        {{-- <td class="text-start">
+                                        <td class="text-start align-middle"><?= Str::limit($pasien->alamat, 18) ?></td>
+                                        <td class="text-start">
                                             <a type="button" class="btn btn-outline-warning"
                                                 href="detail/{{ $pasien->id }}">Detail
                                                 Data</a>
                                             <a type="button" class="btn btn-outline-primary"
                                                 href="edit/{{ $pasien->id }}">Edit
                                                 Data</a>
-                                            <form action="/pasien/delete/{{ $pasien->id }}" method="post"
+                                            <form action="delete/{{ $pasien->id }}" method="post"
                                                 class="d-inline">
                                                 @method('delete')
                                                 @csrf
                                                 <button class="btn btn-outline-danger"
                                                     onclick="return  confirm('Apakah Anda Yakin') ">Hapus</button>
                                             </form>
-                                        </td> --}}
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

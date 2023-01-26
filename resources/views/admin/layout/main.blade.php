@@ -31,7 +31,6 @@
                 <section>
                     @yield('container')
                 </section>
-
             </main>
         </div>
     </div>

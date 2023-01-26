@@ -11,13 +11,13 @@
 
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="/pasien/all">
+                <a class="nav-link" href="/admin/pasien/all">
                     <span data-feather="home" class="align-text-bottom"></span>
                     Pasien
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/dokter/all">
+                <a class="nav-link" href="/admin/dokter/all">
                     <span data-feather="file" class="align-text-bottom"></span>
                     Dokter
                 </a>

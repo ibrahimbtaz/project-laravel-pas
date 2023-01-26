@@ -1,13 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Dashboard\DashboardDokter;
+use App\Http\Controllers\Dashboard\DashboardPasien;
 use App\Http\Controllers\PasienController;
 use App\Http\Controllers\DokterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Contracts\Session\Session;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,9 +71,25 @@ route::group(['prefix' => '/session'], function(){
 route::group(['prefix' => '/admin'], function(){
     Route::get('/all', [AdminController:: class, 'admin'])->middleware('auth');
 
-    // Route::group(['prefix' => '/pasien'], function(){
-    //     Route::get('/all', [PasienAdminController:: class, 'index'])->middleware('auth');
-    // });
+    Route::group(['prefix' => '/pasien'], function(){
+        Route::get('/all', [DashboardPasien:: class, 'index'])->middleware('auth');
+        Route::get('/detail/{pasien}',[DashboardPasien::class,'show']);
+        Route::get('/create', [DashboardPasien:: class, 'create']);
+        Route::post('/add', [DashboardPasien:: class, 'store']);
+        Route::get('/edit/{pasien}',[DashboardPasien::class,'edit']);
+        Route::post('/update/{pasien}', [DashboardPasien:: class, 'update']);
+        Route::delete('/delete/{pasien}',[DashboardPasien::class,'destroy']);
+    });
+
+    route::group(['prefix' => '/dokter'], function(){
+        Route::get('/all', [DashboardDokter:: class, 'index']);
+        Route::get('/detail/{dokter}',[DashboardDokter::class,'show']);
+        Route::get('/create', [DashboardDokter:: class, 'create']);
+        Route::post('/add', [DashboardDokter:: class, 'store']);
+        Route::get('/edit/{dokter}',[DashboardDokter::class,'edit']);
+        Route::post('/update/{dokter}', [DashboardDokter:: class, 'update']);
+        Route::delete('/delete/{dokter}',[DashboardDokter::class,'destroy']);
+    });
 
 });
 
