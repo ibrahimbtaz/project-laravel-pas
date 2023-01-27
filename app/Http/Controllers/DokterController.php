@@ -38,7 +38,7 @@ class DokterController extends Controller
             ]);
 
             Dokter::create($validateData);
-            return redirect('/dokter/all')->with('Successfully','dokter Baru Berhasil Ditambahkan 1');
+            return redirect('/dokter/all')->with('Successfully','Dokter Baru Berhasil Ditambahkan 1');
     }
     public function destroy (Dokter $dokter){
         Dokter::destroy($dokter->id);

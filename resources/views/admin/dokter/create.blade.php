@@ -12,7 +12,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Kode Dokter</label>
-                                <input type="number" class="form-control" id="kode_dokter" name="kode_dokter"
+                                <input type="number" class="form-control noscroll" id="kode_dokter" name="kode_dokter"
                                     value="{{ old('kode_dokter') }}">
                             </div>
                             <br>

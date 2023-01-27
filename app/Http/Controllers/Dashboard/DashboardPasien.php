@@ -34,6 +34,13 @@ class DashboardPasien extends Controller
                 'birthday' => 'required|date_format:Y-m-d',
                 'email' => 'required',
                 'alamat' => 'required',
+            ],[
+                'kode_pasien.required' => 'Kode Pasien wajib diisi',
+                'nama_pasien.required' => 'Nama Pasien wajib diisi',
+                'birthday.required' => 'Tanggal Lahir wajib diisi',
+                'dokter_id.required' => 'Diagnosa wajib diisi',
+                'email.required' => 'Email wajib diisi',
+                'alamat.required' => 'Alamat wajib diisi',
             ]);
 
             Pasien::create($validateData);

@@ -1,5 +1,5 @@
-{{-- @extends('layout.main') --}}
 @extends('admin.layout.main')
+
 @section('container')
     <div class="container">
         <div class="row">
@@ -46,7 +46,7 @@
                                                 Page</a>
                                             <a type="button" class="btn btn-outline-primary" href="edit/{{ $dokter->id }}">Edit
                                                 Page</a>
-                                            <form action="/dokter/delete/{{ $dokter->id }}" method="post"
+                                            <form action="delete/{{ $dokter->id }}" method="post"
                                                 class="d-inline">
                                                 @method('delete')
                                                 @csrf

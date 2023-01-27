@@ -30,10 +30,10 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            // return redirect('pasien/all')->with('success', 'Berhasil login');
-            return redirect('/about')->with('success', 'Berhasil login');
+            // return redirect('pasien/all')->with('success', 'Berhasil Login');
+            return redirect('/about')->with('success', 'Berhasil Login');
         } else {
-            return redirect('/session/login/all')->withErrors('Username dan password yang dimasukkan tidak valid');
+            return redirect('/session/login/all')->withErrors('Username atau Password yang dimasukkan tidak valid !!');
         }
     }
 }

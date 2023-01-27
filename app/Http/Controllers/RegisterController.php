@@ -45,10 +45,10 @@ class RegisterController extends Controller
         ];
 
         if (Auth::attempt($infologin)) {
-            // return redirect('pasien/all')->with('success', Auth::user()->name . ' Berhasil login');
-            return redirect('/about')->with('success', Auth::user()->name . ' Berhasil login');
+            // return redirect('pasien/all')->with('success', Auth::user()->name . ' Berhasil Register');
+            return redirect('/about')->with('success', Auth::user()->name . ' Berhasil Register');
         } else {
-            return redirect('/session/register/all')->withErrors('Username dan password yang dimasukkan tidak valid');
+            return redirect('/session/register/all')->withErrors('Username atau Password yang dimasukkan tidak valid !!');
         }
     }
 

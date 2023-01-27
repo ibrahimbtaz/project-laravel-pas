@@ -25,16 +25,20 @@ use Illuminate\Contracts\Session\Session;
 
 
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+
 Route::get('/', function () {
     return view('login.index');
 });
 
 Route::get('/about', function () {
     return view('about');
-});
+})->middleware('auth');
 
-route::group(['prefix' => '/pasien'], function(){
-    Route::get('/all', [PasienController:: class, 'index'])->middleware('auth');
+route::group(['prefix' => '/pasien','middleware' => 'auth'], function(){
+    Route::get('/all', [PasienController:: class, 'index']);
     Route::get('/detail/{pasien}',[PasienController::class,'show']);
     Route::get('/create', [PasienController:: class, 'create']);
     Route::post('/add', [PasienController:: class, 'store']);
@@ -43,7 +47,7 @@ route::group(['prefix' => '/pasien'], function(){
     Route::delete('/delete/{pasien}',[PasienController::class,'destroy']);
 });
 
-route::group(['prefix' => '/dokter'], function(){
+route::group(['prefix' => '/dokter','middleware' => 'auth'], function(){
     Route::get('/all', [DokterController:: class, 'index']);
     Route::get('/detail/{dokter}',[DokterController::class,'show']);
     Route::get('/create', [DokterController:: class, 'create']);
@@ -52,7 +56,6 @@ route::group(['prefix' => '/dokter'], function(){
     Route::post('/update/{dokter}', [DokterController:: class, 'update']);
     Route::delete('/delete/{dokter}',[DokterController::class,'destroy']);
 });
-
 
 Route::group(['prefix' => '/session'], function(){
     Route::get('/logout', [SessionController::class, 'logout']);
@@ -68,11 +71,11 @@ Route::group(['prefix' => '/session'], function(){
     });
 });
 
-Route::group(['prefix' => '/admin'], function(){
-    Route::get('/all', [AdminController:: class, 'admin'])->middleware('auth');
+Route::group(['prefix' => '/admin','middleware' => 'auth'], function(){
+    Route::get('/all', [AdminController:: class, 'index']);
 
     Route::group(['prefix' => '/pasien'], function(){
-        Route::get('/all', [DashboardPasien:: class, 'index'])->middleware('auth');
+        Route::get('/all', [DashboardPasien:: class, 'index']);
         Route::get('/detail/{pasien}',[DashboardPasien::class,'show']);
         Route::get('/create', [DashboardPasien:: class, 'create']);
         Route::post('/add', [DashboardPasien:: class, 'store']);
@@ -82,7 +85,7 @@ Route::group(['prefix' => '/admin'], function(){
     });
 
     route::group(['prefix' => '/dokter'], function(){
-        Route::get('/all', [DashboardDokter:: class, 'index'])->middleware('auth');
+        Route::get('/all', [DashboardDokter:: class, 'index']);
         Route::get('/detail/{dokter}',[DashboardDokter::class,'show']);
         Route::get('/create', [DashboardDokter:: class, 'create']);
         Route::post('/add', [DashboardDokter:: class, 'store']);
@@ -90,7 +93,6 @@ Route::group(['prefix' => '/admin'], function(){
         Route::post('/update/{dokter}', [DashboardDokter:: class, 'update']);
         Route::delete('/delete/{dokter}',[DashboardDokter::class,'destroy']);
     });
-
 });
 
 

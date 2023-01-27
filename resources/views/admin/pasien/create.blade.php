@@ -1,5 +1,5 @@
-{{-- @extends('layout.main') --}}
 @extends('admin.layout.main')
+
 @section('container')
     <div class="container">
         <div class="row">
@@ -12,7 +12,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="" class="form-label">Kode Pasien</label>
-                                <input class="form-control" id="kode_pasien" name="kode_pasien"
+                                <input class="form-control noscroll" id="kode_pasien" name="kode_pasien"
                                     value="{{ old('kode_pasien') }}">
                             </div>
                             <br>

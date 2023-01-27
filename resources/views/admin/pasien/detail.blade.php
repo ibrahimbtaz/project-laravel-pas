@@ -1,5 +1,5 @@
-{{-- @extends('layout.main') --}}
 @extends('admin.layout.main')
+
 @section('container')
     <div class="container">
         <div class="row">
