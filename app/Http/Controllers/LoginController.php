@@ -33,7 +33,7 @@ class LoginController extends Controller
             // return redirect('pasien/all')->with('success', 'Berhasil login');
             return redirect('/about')->with('success', 'Berhasil login');
         } else {
-            return redirect('auth/all')->withErrors('Username dan password yang dimasukkan tidak valid');
+            return redirect('/session/login/all')->withErrors('Username dan password yang dimasukkan tidak valid');
         }
     }
 }

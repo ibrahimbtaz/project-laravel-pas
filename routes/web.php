@@ -54,23 +54,22 @@ route::group(['prefix' => '/dokter'], function(){
 });
 
 
-route::group(['prefix' => '/auth'], function(){
-    Route::get('/all', [LoginController:: class, 'index'])->name('login')->middleware('guest');
-    Route::post('/login', [LoginController:: class, 'auth']);
-});
-
-route::group(['prefix' => '/register'], function(){
-    Route::get('/all', [RegisterController:: class, 'index'])->middleware('guest');
-    Route::post('/create', [RegisterController:: class, 'store']);
-});
-
-route::group(['prefix' => '/session'], function(){
+Route::group(['prefix' => '/session'], function(){
     Route::get('/logout', [SessionController::class, 'logout']);
+
+    Route::group(['prefix' => '/login'], function(){
+        Route::get('/all', [LoginController:: class, 'index'])->name('login')->middleware('guest');
+        Route::post('/create', [LoginController:: class, 'auth']);
+    });
+
+    route::group(['prefix' => '/register'], function(){
+        Route::get('/all', [RegisterController:: class, 'index'])->middleware('guest');
+        Route::post('/create', [RegisterController:: class, 'store']);
+    });
 });
 
 Route::group(['prefix' => '/admin'], function(){
     Route::get('/all', [AdminController:: class, 'admin'])->middleware('auth');
-
 
     Route::group(['prefix' => '/pasien'], function(){
         Route::get('/all', [DashboardPasien:: class, 'index'])->middleware('auth');
@@ -91,7 +90,7 @@ Route::group(['prefix' => '/admin'], function(){
         Route::post('/update/{dokter}', [DashboardDokter:: class, 'update']);
         Route::delete('/delete/{dokter}',[DashboardDokter::class,'destroy']);
     });
-    
+
 });
 
 

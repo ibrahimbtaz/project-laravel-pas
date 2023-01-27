@@ -35,7 +35,7 @@
             </li>
         @else
             <li class="nav-item">
-                <a href="/auth/login" class="bi bi-box-arrow-right">Login</a>
+                <a href="/sesion/login/create" class="bi bi-box-arrow-right">Login</a>
             </li>
         @endauth
     </ul>

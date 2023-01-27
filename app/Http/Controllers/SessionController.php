@@ -13,6 +13,6 @@ class SessionController extends Controller
 
         request()->session()->invalidate();
         request()->session()->regenerateToken();
-        return redirect('/auth/all')->with('success', 'Berhasil logout');
+        return redirect('/session/login/all')->with('success', 'Berhasil logout');
     }
 }

@@ -13,7 +13,7 @@
         <meta name="generator" content="Hugo 0.104.2">
 
         <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
-        <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <style>
             .bd-placeholder-img {
@@ -69,15 +69,15 @@
         </style>
 
         <!-- Custom styles for this template -->
-        <link href="../css/signin.css" rel="stylesheet">
+        <link href="/css/signin.css" rel="stylesheet">
     </head>
 
     <body class="text-center">
 
         <main class="form-signin w-100 m-auto">
-            <form action="/auth/login" method="POST">
+            <form action="/session/login/create" method="POST">
                 @csrf
-                <img class="mb-4" src="../brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <img class="mb-4" src="/brand/bootstrap-logo.svg" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal text-light">Please Login</h1>
 
                 <div class="form-floating">
@@ -96,7 +96,7 @@
                 </div>
                 <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
                 <div class="mt-3 text-center text-light">
-                    <p>Don't have an account? <a href="/register/all">Register</a></p>
+                    <p>Don't have an account? <a href="/session/register/all">Register</a></p>
                 </div>
             </form>
         </main>
