@@ -82,6 +82,7 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'], function(){
         Route::get('/edit/{pasien}',[DashboardPasien::class,'edit']);
         Route::post('/update/{pasien}', [DashboardPasien:: class, 'update']);
         Route::delete('/delete/{pasien}',[DashboardPasien::class,'destroy']);
+        // Route::get('/search', [DashboardPasien::class,'search']);
     });
 
     route::group(['prefix' => '/dokter'], function(){
@@ -92,6 +93,7 @@ Route::group(['prefix' => '/admin','middleware' => 'auth'], function(){
         Route::get('/edit/{dokter}',[DashboardDokter::class,'edit']);
         Route::post('/update/{dokter}', [DashboardDokter:: class, 'update']);
         Route::delete('/delete/{dokter}',[DashboardDokter::class,'destroy']);
+        // Route::get('/search', [DashboardDokter::class,'search']);
     });
 });
 

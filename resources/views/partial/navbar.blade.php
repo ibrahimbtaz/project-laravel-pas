@@ -26,7 +26,7 @@
                         Hi, {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li> <a class="dropdown-item" href="/admin/all"><i
+                        <li> <a class="dropdown-item" href="/admin/pasien/all"><i
                                     class="bi bi-layout-text-sidebar-reverse">Dashboard</i></a></li>
                         <li>
                             <hr class="dropdown-divider">

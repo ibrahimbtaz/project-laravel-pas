@@ -14,9 +14,9 @@ class DashboardDokter extends Controller
         //     "data_dokter" => Dokter::all()
         // ]);
 
-        $data_pasien = Pasien::with('dokter')->get();
-        $data_dokter = Dokter::with('pasien')->get();
-        return view('admin.dokter.all',compact('data_dokter','data_pasien'));
+        // $data_pasien = Pasien::with('dokter')->paginate(4);
+        $data_dokter = Dokter::with('pasien')->filter(request(['search','dokter_id']))->paginate(4);
+        return view('admin.dokter.all',compact('data_dokter'));
     }
 
     public function show (Dokter $dokter){
@@ -70,4 +70,11 @@ class DashboardDokter extends Controller
             Dokter::where('id', $dokter->id)->update($validateData);
             return redirect('/admin/dokter/all')->with('Successfully','Data Berhasil DiUbah !');
     }
+
+    // public function search(Request $request){
+    //     $search = $request->search_dokter;
+    //     // $searchK = $request->search_keahlian;
+    //     $data_dokter = Dokter::where('nama_dokter', 'like', '%'.$search.'%')->get();
+    //     return view('admin.dokter.all', ['data_dokter' => $data_dokter]);
+    // }
 }

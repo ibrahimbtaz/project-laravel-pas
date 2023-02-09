@@ -6,14 +6,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Dokter;
 use App\Models\Pasien;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardPasien extends Controller
 {
     public function index()
     {
-        $data_pasien = Pasien::with('dokter')->get();
-        $data_dokter = Dokter::with('pasien')->get();
+        $data_pasien = Pasien::with('dokter')->filter(request(['search','dokter_id']))->paginate(7);
+        $data_dokter = Dokter::with('pasien')->filter(request(['search','dokter_id']))->paginate(7);
         return view('admin.pasien.all',compact('data_pasien','data_dokter'));
+
+        // return view('admin.pasien.all',[
+        //     // 'dokter' => Dokter::all(),
+        //     'data_dokter' => Dokter::filter(request(['search','dokter_id']))->paginate(6),
+        //     'data_pasien' => Pasien::filter(request(['search','dokter_id']))->paginate(6),
+        // ]);
     }
 
     public function show (Pasien $pasien){
@@ -71,5 +78,13 @@ class DashboardPasien extends Controller
             Pasien::where('id', $pasien->id)->update($validateData);
             return redirect('/admin/pasien/all')->with('Successfully','Data Berhasil DiUbah !');
     }
+
+    // public function search(Request $request){
+    //     $search = $request->search_pasien;
+    //     // $searchK = $request->search_keahlian;
+    //     $data_pasien = Pasien::where('nama_pasien', 'like', '%'.$search.'%')->get();
+    //     // $data_dokter = Dokter::where('keahlian', 'like', '%'.$search.'%')->get();
+    //     return view('admin.pasien.all', compact('data_pasien'));
+    // }
 
 }

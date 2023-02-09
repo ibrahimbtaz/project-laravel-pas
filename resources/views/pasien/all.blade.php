@@ -30,7 +30,8 @@
                             <tbody>
                                 @foreach ($data_pasien as $pasien)
                                     <tr align="center">
-                                        <td class="align-middle"><?= $pasien->id ?></td>
+                                        <td class="align-middle"><?= $loop->iteration ?></td>
+                                        {{-- <td class="align-middle"><?= $pasien->id ?></td> --}}
                                         <td class="text-start align-middle"><?= $pasien->kode_pasien ?></td>
                                         <td class="text-start align-middle"><?= $pasien->nama_pasien ?></td>
                                         <td class="text-start align-middle"><?= $pasien->birthday ?></td>
@@ -56,6 +57,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div>
+                            {{ $data_pasien->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

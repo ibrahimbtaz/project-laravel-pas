@@ -13,8 +13,9 @@ class PasienController extends Controller
         //     "data_pasien" => Pasien::all()
         // ]);
 
-        $data_pasien = Pasien::with('dokter')->get();
-        $data_dokter = Dokter::with('pasien')->get();
+        // $data_pasien = Pasien::with('dokter')->get()->sortBy('dokter_id');
+        $data_pasien = Pasien::with('dokter')->paginate(6);
+        $data_dokter = Dokter::with('pasien')->paginate(6);
         return view('pasien.all',compact('data_pasien','data_dokter'));
     }
     public function show (Pasien $pasien){
