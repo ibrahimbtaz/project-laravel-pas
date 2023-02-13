@@ -22,8 +22,8 @@ class Pasien extends Model
         if(isset($filters['search']) ? $filters['search'] : false){
             return $query->where('kode_pasien', 'like', '%' . $filters['search'] . '%')
                 ->orWhere('nama_pasien', 'like', '%' . $filters['search'] . '%')
-                ->onwhere('birthday', $filters['search'])
-                ->onwhere('email', $filters['search'])
+                ->orwhere('birthday', 'like', '%' . $filters['search'] . '%')
+                ->orwhere('email','like', '%' . $filters['search'] . '%')
                 ->orWhere('alamat', 'like', '%' . $filters['search'] . '%');
         }
 

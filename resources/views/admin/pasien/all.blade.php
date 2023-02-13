@@ -21,8 +21,8 @@
                                 <form action="/admin/pasien/all" method="GET" role="search">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <select name="dokter_id" id="" class="form-select">
-                                                <option name="dokter_id" value="0" selected="true" disabled="disabled">
+                                            <select name="dokter_id" id="dokter_id" class="form-select">
+                                                <option name="dokter_id" value="0" selected="true">
                                                     Diagnosa</option>
                                                 @foreach ($data_dokter as $doctor)
                                                     @if (request('dokter_id') == $doctor->id)
