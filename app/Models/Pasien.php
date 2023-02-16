@@ -19,12 +19,12 @@ class Pasien extends Model
 
     public function scopefilter($query, array $filters){
 
-        if(isset($filters['search']) ? $filters['search'] : false){
-            return $query->where('kode_pasien', 'like', '%' . $filters['search'] . '%')
-                ->orWhere('nama_pasien', 'like', '%' . $filters['search'] . '%')
-                ->orwhere('birthday', 'like', '%' . $filters['search'] . '%')
-                ->orwhere('email','like', '%' . $filters['search'] . '%')
-                ->orWhere('alamat', 'like', '%' . $filters['search'] . '%');
+        if(isset($filters['search'])){
+            $query->Where('kode_pasien', 'like', '%' . $filters['search'] . '%')
+                ->orWhere('nama_pasien', 'like', '%' . $filters['search'] . '%');
+                // ->orWhere('birthday', 'like', '%' . $filters['search'] . '%')
+                // ->orWhere('email','like', '%' . $filters['search'] . '%')
+                // ->orWhere('alamat', 'like', '%' . $filters['search'] . '%');
         }
 
         // $query->when($filters['search'] ?? false, function($query, $search){
@@ -33,8 +33,8 @@ class Pasien extends Model
         //     ->orWhere('alamat','like','%'.$search.'%');
         // });
 
-        if(isset($filters['dokter_id']) ? $filters['dokter_id'] : false){
-            return $query->where('dokter_id',$filters['dokter_id']);
+        if(isset($filters['dokter_id'])){
+            $query->Where('dokter_id',$filters['dokter_id']);
         }
 
         // $query->when($filters['dokter_id'] ?? false, function($query, $dokter_id){

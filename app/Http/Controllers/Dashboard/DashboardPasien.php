@@ -12,15 +12,15 @@ class DashboardPasien extends Controller
 {
     public function index()
     {
-        $data_pasien = Pasien::with('dokter')->filter(request(['search','dokter_id']))->paginate(7);
-        $data_dokter = Dokter::with('pasien')->filter(request(['search','dokter_id']))->paginate(7);
-        return view('admin.pasien.all',compact('data_pasien','data_dokter'));
+        // $data_pasien = Pasien::filter(request(['search','dokter_id']))->paginate(7);
+        // $data_dokter = Dokter::all();
+        // return view('admin.pasien.all',compact('data_pasien','data_dokter'));
 
-        // return view('admin.pasien.all',[
-        //     // 'dokter' => Dokter::all(),
-        //     'data_dokter' => Dokter::filter(request(['search','dokter_id']))->paginate(6),
-        //     'data_pasien' => Pasien::filter(request(['search','dokter_id']))->paginate(6),
-        // ]);
+        return view('admin.pasien.all',[
+            // 'dokter' => Dokter::all(),
+            'data_pasien' => Pasien::filter(request(['search','dokter_id']))->paginate(6),
+                'data_dokter' => Dokter::all()
+        ]);
     }
 
     public function show (Pasien $pasien){
