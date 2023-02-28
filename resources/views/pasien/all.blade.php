@@ -13,7 +13,41 @@
                 <div class="">
                     <div class="card-body">
                         {{-- <a type="button" class="btn btn-primary float-end" href="create">Tambah Data Baru</a> --}}
-                        <br><br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <form action="/pasien/all" method="GET" role="search">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <select name="dokter_id" id="dokter_id" class="form-select">
+                                                <option name="dokter_id" value="0" selected="true">
+                                                    Diagnosa</option>
+                                                @foreach ($data_dokter as $doctor)
+                                                    @if (request('dokter_id') == $doctor->id)
+                                                        <option name="dokter_id" value="{{ $doctor->id }}" selected>
+                                                            {{ $doctor->keahlian }}
+                                                        </option>
+                                                    @else
+                                                        <option name="dokter_id" value="{{ $doctor->id }}">
+                                                            {{ $doctor->keahlian }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="input-group mb-3">
+                                                <input type="text" name="search" class="form-control"
+                                                    placeholder="Search name.." aria-label="Search username"
+                                                    aria-describedby="basic-addon2" value="{{ request('search') }}">
+                                                <button class="btn btn-outline-secondary" id="search"
+                                                    type="submit">Search</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                         <table class="table table-dark table-hover">
                             <thead>
                                 <tr align="center" class="table-active">

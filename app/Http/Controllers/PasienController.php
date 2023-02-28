@@ -14,9 +14,15 @@ class PasienController extends Controller
         // ]);
 
         // $data_pasien = Pasien::with('dokter')->get()->sortBy('dokter_id');
-        $data_pasien = Pasien::with('dokter')->paginate(6);
-        $data_dokter = Dokter::with('pasien')->paginate(6);
-        return view('pasien.all',compact('data_pasien','data_dokter'));
+        // $data_pasien = Pasien::with('dokter')->paginate(6);
+        // $data_dokter = Dokter::with('pasien')->paginate(6);
+        // return view('pasien.all',compact('data_pasien','data_dokter'));
+
+        return view('pasien.all',[
+            // 'dokter' => Dokter::all(),
+            'data_pasien' => Pasien::filter(request(['search','dokter_id']))->paginate(6),
+                'data_dokter' => Dokter::all()
+        ]);
     }
     public function show (Pasien $pasien){
         return view('pasien.detail',[
