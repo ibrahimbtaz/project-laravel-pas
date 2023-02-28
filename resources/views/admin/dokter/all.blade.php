@@ -21,8 +21,9 @@
                                 <form action="/admin/dokter/all" method="GET" role="search">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <select name="dokter_id" id="" class="form-select">
-                                                <option name="dokter_id" value="0" selected="true">Keahlian</option>
+                                            <select name="dokter_id" id="dokter_id" class="form-select">
+                                                <option name="dokter_id" value="0" selected="true">
+                                                    Keahlian</option>
                                                 @foreach ($data_dokter as $doctor)
                                                     @if (request('dokter_id') == $doctor->id)
                                                         <option name="dokter_id" value="{{ $doctor->id }}" selected>

@@ -19,10 +19,10 @@ class Dokter extends Model
     public function scopefilter($query, array $filters){
 
         if(isset($filters['search']) ? $filters['search'] : false){
-            return $query->where('kode_dokter','like','%'.$filters['search'].'%')
-            ->orWhere('nama_dokter','like','%'.$filters['search'].'%')
-            ->orWhere('telepon','like','%'.$filters['search'].'%')
-            ->orWhere('alamat','like','%'.$filters['search'].'%');
+            $query->where('kode_dokter','like','%'.$filters['search'].'%')
+                ->orWhere('nama_dokter','like','%'.$filters['search'].'%');
+            // ->orWhere('telepon','like','%'.$filters['search'].'%')
+            // ->orWhere('alamat','like','%'.$filters['search'].'%');
         }
 
         // $query->when($filters['search'] ?? false, function($query, $search){
@@ -32,7 +32,7 @@ class Dokter extends Model
         // });
 
         if(isset($filters['dokter_id']) ? $filters['dokter_id'] : false){
-            return $query->where('id',$filters['dokter_id']);
+            $query->Where('id',$filters['dokter_id']);
         }
 
         // $query->when($filters['dokter_id'] ?? false, function($query, $dokter_id){

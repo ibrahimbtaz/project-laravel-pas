@@ -33,7 +33,7 @@ class Pasien extends Model
         //     ->orWhere('alamat','like','%'.$search.'%');
         // });
 
-        if(isset($filters['dokter_id'])){
+        if(isset($filters['dokter_id']) ? $filters['dokter_id'] : false){
             $query->Where('dokter_id',$filters['dokter_id']);
         }
 
