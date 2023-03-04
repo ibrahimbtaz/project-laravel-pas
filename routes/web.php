@@ -37,7 +37,7 @@ Route::get('/about', function () {
     return view('about');
 })->middleware('auth');
 
-route::group(['prefix' => '/pasien','middleware' => 'auth'], function(){
+route::group(['prefix' => '/pasien'], function(){
     Route::get('/all', [PasienController:: class, 'index']);
     Route::get('/detail/{pasien}',[PasienController::class,'show']);
     Route::get('/create', [PasienController:: class, 'create']);
@@ -47,7 +47,7 @@ route::group(['prefix' => '/pasien','middleware' => 'auth'], function(){
     Route::delete('/delete/{pasien}',[PasienController::class,'destroy']);
 });
 
-route::group(['prefix' => '/dokter','middleware' => 'auth'], function(){
+route::group(['prefix' => '/dokter'], function(){
     Route::get('/all', [DokterController:: class, 'index']);
     Route::get('/detail/{dokter}',[DokterController::class,'show']);
     Route::get('/create', [DokterController:: class, 'create']);

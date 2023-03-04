@@ -15,8 +15,8 @@
 <body class="bg-dark">
     <div class="container py-5">
         @if (Auth::check())
-            @include('partial.navbar')
         @endif
+        @include('partial.navbar')
         @include('partial.pesan')
         <div class="container">
             @yield('container')
